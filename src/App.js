@@ -6,7 +6,7 @@ function App() {
     <div className="App">
       <h1>Weather App</h1>
       <footer>
-        <a href=''>This project was coded by</a>
+        
      </footer>
     </div>
   );

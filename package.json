@@ -1,5 +1,5 @@
 {
-  "name": "react-weather-app",
+  "name": "weather-react-app",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -9,7 +9,7 @@
     "react": "^18.x",
     "react-animated-weather": "^4.x",
     "react-dom": "^18.x",
-    "react-scripts": "5.x"
+    "react-scripts": "^5.0.1"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -31,5 +31,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "web-vitals": "^3.3.2"
   }
 }

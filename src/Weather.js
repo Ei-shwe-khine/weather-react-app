@@ -16,7 +16,7 @@ export default function Weather(props) {
             humidity: response.data.main.humidity,
             date: new Date(response.data.dt * 1000),
             description: response.data.weather[0].description,
-            icon: response.data.icon,
+           icon: response.data.weather[0].icon,
             wind: response.data.wind.speed,
             city: response.data.name,
         });
@@ -39,7 +39,9 @@ export default function Weather(props) {
 
     }    if (weatherData.ready) {
         return (
+           
             <div className="Weather">
+                 <div className="all">
                 <form onSubmit={handleSubmit}>
                     <div className="row">
                         <div className="col-9">
@@ -54,7 +56,14 @@ export default function Weather(props) {
                 </form>
                 <WeatherInfo data={ weatherData} />
                
-            </div>
+                </div>
+                
+      <footer className="footer">
+        This project was coded by <a href="https://www.shecodes.io/graduates/73819-ei-shwe-khine" target='_blank'>Ei Shwe Khine </a>{''} and is {''}
+        <a href='https://github.com/Ei-shwe-khine/weather-react-app' target='_blank'>open-sourced on GitHub</a>
+       and <a href="https://648497e5d4b405000867f08c--cerulean-syrniki-ad1994.netlify.app/">hosted on Netlify</a>
+     </footer>
+                </div>
         );
 
     } else {

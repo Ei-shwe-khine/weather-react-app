@@ -1,58 +1,71 @@
-.Weather{
-    font-family: arial, sans-serif;
-    border: 1px solid #dadde1;
-    padding: 16px;
-    margin: 0 auto;
-    border-radius: 4px;
-    color: #878787;
 
-
+.Weather {
+  font-family: arial, sans-serif;
+  border: 1px solid #dadde1;
+  padding: 16px;
+  border-radius: 4px;
+  color: rgba(27, 26, 26, 0.801);
+  background-color:#4797D7;
+  height: 400px;
+  width: 700px;
+  
 }
-.Weather form{
-    margin-bottom: 20px;
-}
-.Weather h1{
-        
-    font-size: 24px;
-    font-weight: 100;
-    margin: 20px 0 0 0 ;
-    line-height: 19px;
-}
-.Weather ul{
-
-    margin: 0;
-    padding: 0;
-}
-.Weather li{
-
-    font-size: 16px;
-    font-weight: 100;
-    line-height: 19px;
-    list-style: none;
-}
-.Weather img{
-    height: 64px;
-    width: 64px;
-    margin-right: 10px;
-    display: inline-block;
-    margin-top: -25px;
-
-}
-.Weather .temperature{
-    font-weight: bold;
-    color: rgb(33,33,33);
-    font-size: 64px;
-    line-height: 64px;
-    font-weight: 400;
-    
+.all{
+  background-image: url(summer1.jpeg);
+   background-repeat: no-repeat;
+    background-size: cover;
+    margin: auto;
+   margin-top: 30px;
+   height: 300px;
+   max-width: 600px;
    
 }
-.Weather .unit{
-    color: rgb(33,33,33);
-    font-size: 16px;
-    font-weight: 400;
-    line-height: 1;
-    position: relative;
-    top: -34px;
-    margin-left: 5px;
+
+.Weather h1 {
+  font-size: 24px;
+  font-weight: 100;
+  margin: 20px 0 0 0;
+  line-height: 29px;
+}
+
+.Weather ul {
+  margin: 0;
+  padding: 0;
+}
+
+.Weather li {
+  font-size: 16px;
+  font-weight: 100;
+  line-height: 19px;
+  list-style: none;
+}
+
+.Weather .temperature {
+  font-weight: bold;
+  color: rgb(33, 33, 33);
+  font-size: 64px;
+  line-height: 64px;
+  margin-left: 5px;
+  font-weight: 400;
+  margin-left: 10px;
+}
+
+.Weather canvas {
+  margin: 10px auto;
+}
+
+.Weather .unit {
+  color: rgb(33, 33, 33);
+  font-size: 16px;
+  font-weight: 400;
+  position: relative;
+  line-height: 1;
+  top: -34px;
+  
+}
+.unit a{
+    text-decoration: none;
+}
+.Weather .footer{
+    margin-left: 35px;
 }

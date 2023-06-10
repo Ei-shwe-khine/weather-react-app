@@ -8,8 +8,8 @@ function App() {
   return (
     <div className="App">
       <div className='container'>
-      <h1>Weather App</h1>
-        <Weather />
+      
+        <Weather defaultCity="Thailand"/>
         
       <footer>
         This project was coded by <a href="https://www.shecodes.io/graduates/73819-ei-shwe-khine" target='_blank'>Ei Shwe Khine </a>{''} and is {''}

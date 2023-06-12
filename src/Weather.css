@@ -5,8 +5,8 @@
   padding: 16px;
   border-radius: 4px;
   color: rgba(27, 26, 26, 0.801);
-  background-color:#4797D7;
-  height: 400px;
+  background-color:#a5d0f3;
+  height: 450px;
   width: 700px;
   
 }
@@ -16,7 +16,7 @@
     background-size: cover;
     margin: auto;
    margin-top: 30px;
-   height: 300px;
+   height: 350px;
    max-width: 600px;
    
 }

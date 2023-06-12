@@ -1,43 +1,46 @@
 import React, { useState } from "react";
 import WeatherInfo from "./WeatherInfo";
+import WeatherForecast from "./WeatherForecast";
 import axios from "axios";
 import "./Weather.css";
 
 export default function Weather(props) {
+  const [weatherData, setWeatherData] = useState({ ready: false });
+  const [city, setCity] = useState(props.defaultCity);
 
-    const [weatherData, setWeatherData] = useState({ ready: false });
-    const [city, setCity] = useState(props.defaultCity);
+  function handleResponse(response) {
+    setWeatherData({
+      ready: true,
+      coordinates: response.data.coord,
+      temperature: response.data.main.temp,
+      humidity: response.data.main.humidity,
+      date: new Date(response.data.dt * 1000),
+      description: response.data.weather[0].description,
+      icon: response.data.weather[0].icon,
+      wind: response.data.wind.speed,
+      city: response.data.name,
+    });
+  }
 
-    function handleResponse(response) {
-        console.log(response.data);
-        setWeatherData({
-            ready: true,
-            temperature: response.data.main.temp,
-            humidity: response.data.main.humidity,
-            date: new Date(response.data.dt * 1000),
-            description: response.data.weather[0].description,
-           icon: response.data.weather[0].icon,
-            wind: response.data.wind.speed,
-            city: response.data.name,
-        });
+  function handleSubmit(event) {
+    event.preventDefault();
+    search();
+  }
 
-    }
+  function handleCityChange(event) {
+    setCity(event.target.value);
+  }
 
-    function serach() {
-    const apiKey = "5f472b7acba333cd8a035ea85a0d4d4c"; 
-    let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}`;
+  function search() {
+   // const apiKey = "6655e6104636a644c9bc754d824a695d";
+        const apiKey = "5f472b7acba333cd8a035ea85a0d4d4c";
+
+    let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
     axios.get(apiUrl).then(handleResponse);
-    }
-    function handleSubmit(event) {
-        event.preventDefault();
-        serach();
-        //search for a city
-    }
+  }
 
-    function handleCityChange(event) {
-        setCity(event.target.value);
 
-    }    if (weatherData.ready) {
+       if (weatherData.ready) {
         return (
            
             <div className="Weather">
@@ -55,12 +58,12 @@ export default function Weather(props) {
                     </div>
                 </form>
                 <WeatherInfo data={ weatherData} />
-               
+                    <WeatherForecast coordinates={weatherData.coordinates } />
                 </div>
-                
+               
       <footer className="footer">
-        This project was coded by <a href="https://www.shecodes.io/graduates/73819-ei-shwe-khine" target='_blank'>Ei Shwe Khine </a>{''} and is {''}
-        <a href='https://github.com/Ei-shwe-khine/weather-react-app' target='_blank'>open-sourced on GitHub</a>
+        This project was coded by <a href="https://www.shecodes.io/graduates/73819-ei-shwe-khine" >Ei Shwe Khine </a>{''} and is {''}
+        <a href='https://github.com/Ei-shwe-khine/weather-react-app' >open-sourced on GitHub</a>
        and <a href="https://648497e5d4b405000867f08c--cerulean-syrniki-ad1994.netlify.app/">hosted on Netlify</a>
      </footer>
                 </div>
@@ -69,7 +72,7 @@ export default function Weather(props) {
     } else {
     //const apiKey = "6655e6104636a644c9bc754d824a695d";
     
-        serach();
+        search();
         return "Loading.....";
     }
 

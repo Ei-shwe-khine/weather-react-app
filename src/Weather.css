@@ -3,6 +3,7 @@
   font-family: arial, sans-serif;
   border: 1px solid #dadde1;
   padding: 16px;
+  margin-left: -60px;
   border-radius: 4px;
   color: rgba(27, 26, 26, 0.801);
   background-color:#a5d0f3;
@@ -12,6 +13,8 @@
 }
 .all{
   background-image: url(summer1.jpeg);
+  border: 2px solid #a5d0f3;
+    border-radius: 10px;
    background-repeat: no-repeat;
     background-size: cover;
     margin: auto;
@@ -24,7 +27,7 @@
 .Weather h1 {
   font-size: 24px;
   font-weight: 100;
-  margin: 20px 0 0 0;
+  margin: 20px 10px 0 10px;
   line-height: 29px;
 }
 
@@ -68,4 +71,10 @@
 }
 .Weather .footer{
     margin-left: 35px;
+}
+.WeatherInfo li{
+  margin: 0 0 0 10px;
+}
+.d-flex {
+  margin: 0 0 0 10px;
 }
